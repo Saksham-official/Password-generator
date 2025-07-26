@@ -11,13 +11,9 @@ All you need is `Python 3` installed on your system. To run the script, use the 
 
 ✨ **Key Features**
 Custom Length: You decide how long your password needs to be.
-
 Tailored Complexity: Choose whether to include letters, numbers, and symbols.
-
 Instant Generation: Get a secure, random password in the blink of an eye.
-
 Interactive & Simple: A user-friendly command-line interface that anyone can use.
-
 Lightweight & Open Source: No complicated setup. Just one Python file and complete transparency.
 
 🚀 **Getting Started**
@@ -26,30 +22,26 @@ Ready to create your first unbreakable password? It only takes a minute.
 Prerequisites
 All you need is Python 3 installed on your system. Most modern operating systems (like macOS and Linux) come with it pre-installed. You can check by opening a terminal and typing:
 
-'''
-python3 --version
-Installation
-Download the Code:
-Save the Python script from our project as password_generator.py on your computer.
 
-Navigate to the File:
-Open your terminal or command prompt and navigate to the directory where you saved the file.
-'''
+>.python3 --version
+>Installation
+>Download the Code:
+>Save the Python script from our project as password_generator.py on your computer.
 
-'''
-cd path/to/your/folder
-⚙️ How to Use It
-Running the script is as easy as talking to a friend.
+vNavigate to the File:
+>Open your terminal or command prompt and navigate to the directory where you saved the file.
 
-Execute the script from your terminal:
-'''
+
+>cd path/to/your/folder
+>⚙️ How to Use It
+>Running the script is as easy as talking to a friend.
+
+>Execute the script from your terminal:
 
 
 python password_generator.py
 The script will first ask for your desired password length.
-
 Then, it will ask you to specify the complexity by answering yes or no to including letters, numbers, and symbols.
-
 That's it! Your new, secure password will be displayed on the screen.
 
 Example Interaction:
