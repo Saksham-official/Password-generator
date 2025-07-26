@@ -1,4 +1,6 @@
-**The Secure Password Generator** 🔐
+***The Secure Password Generator*** 🔐
+
+
 Tired of using password123? Worried that your digital life is one easy guess away from being compromised? We get it. This little tool is here to give you back your peace of mind.
 
 In a world where our digital lives are constantly under threat, a strong password is your first line of defense. But creating them can be a pain. This project was born from a simple idea: making digital security easy and accessible for everyone.
@@ -44,28 +46,29 @@ The script will first ask for your desired password length.
 Then, it will ask you to specify the complexity by answering yes or no to including letters, numbers, and symbols.
 That's it! Your new, secure password will be displayed on the screen.
 
-Example Interaction:
-Enter the desired length for the password: 16
 
+***Example Interaction:***
+
+
+Enter the desired length for the password: 16
 
 Specify the complexity requirements (yes/no).
 
-
 Include letters (e.g., abc, ABC)? yes
-
 
 Include numbers (e.g., 123)? yes
 
-
 Include symbols (e.g., !@#)? no
 
----------------------------------
+---------------------------------------
 Generated Password: B7w5pGq2kL9sR1vE 🔐
----------------------------------
+---------------------------------------
 ***Why This Matters*** ❤️
 Your digital fortress deserves a strong gate. Every account, from your email to your banking app, is a door to your personal life. We built this tool not just as a coding exercise, but as a small contribution to a safer internet for all of us. We believe that security shouldn't be a luxury or a chore—it should be a simple, accessible right.
+
 
 **Want to Contribute?**
 We believe in the power of collaboration! If you have an idea to make this tool even better—perhaps by adding a feature to guarantee at least one of each chosen character type, or building a graphical user interface (GUI)—we would love to see it.
 
-Feel free to fork the project, make your changes, and submit a pull request. Every contribution is deeply appreciated.
+
+*Feel free to fork the project, make your changes, and submit a pull request. Every contribution is deeply appreciated.*
