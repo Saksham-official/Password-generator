@@ -28,7 +28,7 @@ All you need is Python 3 installed on your system. Most modern operating systems
 >Download the Code:
 >Save the Python script from our project as password_generator.py on your computer.
 
-vNavigate to the File:
+>Navigate to the File:
 >Open your terminal or command prompt and navigate to the directory where you saved the file.
 
 
@@ -47,9 +47,16 @@ That's it! Your new, secure password will be displayed on the screen.
 Example Interaction:
 Enter the desired length for the password: 16
 
+
 Specify the complexity requirements (yes/no).
+
+
 Include letters (e.g., abc, ABC)? yes
+
+
 Include numbers (e.g., 123)? yes
+
+
 Include symbols (e.g., !@#)? no
 
 ---------------------------------
