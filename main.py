@@ -1,42 +1,72 @@
-import random
+import streamlit as st
 import string
+import secrets
+from streamlit_copy_to_clipboard import st_copy_to_clipboard
 
-def generate_password():
-    try:
-        length = int(input("Enter length for the password = "))
+# --- App Configuration ---
+st.set_page_config(page_title="Password Generator", page_icon="🔐", layout="centered")
 
-        if length <= 0:
-            print("Length must be positive. Try Again")
-            return
+# --- Password Generation Logic ---
+def generate_password(length, include_uppercase, include_lowercase, include_numbers, include_symbols):
+    """Generates a cryptographically secure random password based on user criteria."""
+    
+    # Build the set of possible characters based on user choices
+    character_set = ""
+    if include_uppercase:
+        character_set += string.ascii_uppercase
+    if include_lowercase:
+        character_set += string.ascii_lowercase
+    if include_numbers:
+        character_set += string.digits
+    if include_symbols:
+        character_set += string.punctuation
         
-        print("\nSpecify the complexity requirements (y/n).")
-        include_letters = input("Include letters (e.g. ABC, abc?) : ").lower().startswith('y')
-        include_number = input("include num (e.g. 123 ?) : ").lower().startswith("y")
-        include_symbols = input("Include symbols (e.g. !@# ?) : ").lower().startswith('y')
+    # Handle the case where no character type is selected
+    if not character_set:
+        return None
 
+    # Use secrets.choice for a secure random selection
+    password = ''.join(secrets.choice(character_set) for _ in range(length))
+    return password
 
-        characters = ""
-        if include_letters:
-            characters += string.ascii_letters
-        if include_number:
-            characters += string.digits
-        if include_symbols:
-            characters += string.punctuation
+# --- Streamlit User Interface ---
+st.title("🔐 Secure Password Generator")
+st.markdown("Create strong, random passwords to protect your accounts online.")
 
-        if not characters:
-            print("\nSelect atleast 1 character type.")
-            return
-        
-        password = ''.join(random.choice(characters) for i in range(length))
+# --- User Input Widgets ---
+length = st.slider(
+    "Password Length", 
+    min_value=8, 
+    max_value=64, 
+    value=16, 
+    help="Choose how many characters your password should have."
+)
 
-        print("\n----------------------------------")
-        print(f"Generated password 🔐: {password}")
-        print("----------------------------------")
+st.subheader("Include Character Types:")
+col1, col2 = st.columns(2)
+with col1:
+    include_uppercase = st.checkbox("Uppercase (A-Z)", value=True)
+    include_numbers = st.checkbox("Numbers (0-9)", value=True)
+with col2:
+    include_lowercase = st.checkbox("Lowercase (a-z)", value=True)
+    include_symbols = st.checkbox("Symbols (!@#$)", value=True)
 
-    except ValueError:
-        print("\nInvalid input! Try Again")
+# --- Password Generation and Display ---
+if st.button("Generate Password", type="primary"):
+    # Generate the password using the function
+    password = generate_password(
+        length, 
+        include_uppercase, 
+        include_lowercase, 
+        include_numbers, 
+        include_symbols
+    )
 
-if __name__ == "__main__":
-    generate_password()
-
-
+    if password:
+        st.success("Here is your new password:")
+        # Use st.code for a clean, monospaced display
+        st.code(password, language="text")
+        # Add the copy to clipboard button
+        st_copy_to_clipboard(password, "Copy to Clipboard")
+    else:
+        st.error("Error: Please select at least one character type to generate a password.")
