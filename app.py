@@ -1,7 +1,7 @@
 import streamlit as st
 import string
 import secrets
-from streamlit-copy-to-clipboard import st-copy-to-clipboard
+from streamlit_copy_to_clipboard import st_copy_to_clipboard
 
 # --- App Configuration ---
 st.set_page_config(page_title="Password Generator", page_icon="🔐", layout="centered")
